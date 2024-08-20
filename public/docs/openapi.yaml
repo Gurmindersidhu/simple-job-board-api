@@ -1,0 +1,282 @@
+openapi: 3.0.3
+info:
+  title: Simple-job-board-api
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user/register:
+    post:
+      summary: 'Register api'
+      operationId: registerApi
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: dolorem
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: mckenzie.clare@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: repellat
+                c_password:
+                  type: string
+                  description: 'The value and <code>password</code> must match.'
+                  example: id
+              required:
+                - name
+                - email
+                - password
+                - c_password
+      security: []
+  /api/user/login:
+    post:
+      summary: 'Login api'
+      operationId: loginApi
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/jobs:
+    get:
+      summary: ''
+      operationId: getApiJobs
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    post:
+      summary: ''
+      operationId: postApiJobs
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: minus
+                description:
+                  type: string
+                  description: ''
+                  example: ut
+                company:
+                  type: string
+                  description: ''
+                  example: consequatur
+                location:
+                  type: string
+                  description: ''
+                  example: eaque
+                salary:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - title
+                - description
+                - company
+                - location
+                - salary
+  '/api/jobs/{jobs_job_id}':
+    get:
+      summary: ''
+      operationId: getApiJobsJobs_job_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    put:
+      summary: ''
+      operationId: putApiJobsJobs_job_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: non
+                description:
+                  type: string
+                  description: ''
+                  example: non
+                company:
+                  type: string
+                  description: ''
+                  example: sint
+                location:
+                  type: string
+                  description: ''
+                  example: est
+                salary:
+                  type: string
+                  description: ''
+                  example: ut
+              required:
+                - title
+                - description
+                - company
+                - location
+                - salary
+    delete:
+      summary: ''
+      operationId: deleteApiJobsJobs_job_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: jobs_job_id
+        description: 'The ID of the jobs job.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/jobs/apply:
+    post:
+      summary: ''
+      operationId: postApiJobsApply
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                job_id:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - job_id
+  /api/jobs/applications:
+    post:
+      summary: ''
+      operationId: postApiJobsApplications
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: Token
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+tags:
+  -
+    name: Endpoints
+    description: ''
