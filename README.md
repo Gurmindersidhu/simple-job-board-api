@@ -65,3 +65,21 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # simple-job-board-api
+
+Run these commands for dependancies
+ step 1
+[composer install]
+
+ step 2
+set database dependancies in .env file
+
+ step 3
+[php artisan migrate]
+
+ step 4
+[php artisan serve]
+
+ step 5
+open this [link](http://127.0.0.1:8000/docs/index.html) for api's documentaion.
+
+
